@@ -1,0 +1,32 @@
+.grammarContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 10px;
+  gap: 2.5px;
+  background: var(--primary-container-color);
+  border-radius: 5px;
+  border: solid 1px var(--attenuated-text-color);
+  font-family: "Fira Code", monospace;
+}
+
+.lltable {
+  padding: 10px;
+  border: solid 1px var(--attenuated-text-color);
+
+  tr:first-child {
+    background: white;
+    color: black;
+  }
+
+  td {
+    padding: 5px;
+    border: solid 1px var(--attenuated-text-color);
+    min-width: 35px;
+    text-align: center;
+
+    &:first-child {
+      background: white;
+      color: black;
+    }
+  }
+}

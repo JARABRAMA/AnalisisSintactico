@@ -1,0 +1,31 @@
+:root {
+  --attenuated-text-color: #a7a7a7;
+}
+
+.topBar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px var(--attenuated-text-color);
+  padding: 0px 10px;
+
+  svg {
+    color: var(--primary-color);
+  }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.topBar nav {
+  display: flex;
+  gap: 12px;
+  svg {
+    width: 25px;
+    height: auto;
+  }
+}

@@ -1,0 +1,11 @@
+.footerApp {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  padding-top: 1rem;
+  gap: 5px;
+
+  border-top: solid 1px var(--attenuated-text-color);
+}
