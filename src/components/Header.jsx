@@ -18,7 +18,11 @@ export function Header() {
         Analisís sintactico de cadenas
       </h2>
       <nav>
-        <a href="#">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://colab.research.google.com/drive/1icjXddQ58nNAszJGrvRppOq5VSqiYZxc?usp=sharing"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -31,7 +35,11 @@ export function Header() {
             />
           </svg>
         </a>
-        <a href="#">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/JARABRAMA/AnalisisSintactico"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
