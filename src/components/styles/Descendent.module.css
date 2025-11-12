@@ -2,10 +2,15 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  min-width: fit-content;
-
-  margin: 0px 35px;
   gap: 25px;
+  width: 90%;
+  margin: auto;
+}
+
+@media (width > 1250px) {
+  .container {
+    max-width: 1000px;
+  }
 }
 
 .inputContainer {
@@ -48,6 +53,14 @@
 .error {
   padding: 8px 12px;
   background: rgb(250, 60, 60);
+  border: none;
+  border-radius: 8px;
+  color: var(--text-color);
+}
+
+.result {
+  padding: 8px 12px;
+  background: var(--primary-color);
   border: none;
   border-radius: 8px;
   color: var(--text-color);

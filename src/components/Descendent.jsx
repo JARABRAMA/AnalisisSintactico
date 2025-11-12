@@ -1,6 +1,6 @@
 import styles from "./styles/Descendent.module.css";
 import { DescendentExplanation } from "./DescendentExplanation.jsx";
-export function Descendent({ state, handleSubmit, refInput, error }) {
+export function Descendent({ state, handleSubmit, refInput, error, result }) {
   return (
     <main className={styles.container}>
       <header>
@@ -23,6 +23,7 @@ export function Descendent({ state, handleSubmit, refInput, error }) {
           {state}
         </div>
       )}
+      {result && <div className={styles.result}>{`Resultado:  ${result}`}</div>}
 
       <DescendentExplanation />
     </main>

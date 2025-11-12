@@ -10,18 +10,8 @@
   --attenuated-text-color: #a7a7a7;
 }
 
-#root {
-  width: 90%;
-}
-
-@media (width > 1120px) {
-  #root {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-}
-
 body {
+  margin: 0;
   font-family: "Fira Sans", sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
@@ -44,4 +34,9 @@ button {
 
 input {
   font-family: "Fira Sans", sans-serif;
+}
+
+h3 {
+  margin-top: 25px;
+  margin-bottom: 0px;
 }

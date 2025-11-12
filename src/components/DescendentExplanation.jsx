@@ -72,15 +72,17 @@ export function DescendentExplanation() {
 
       <h3>Tabla LL(1)</h3>
       <table className={styles.lltable}>
-        {tabla.map((row, index) => {
-          return (
-            <tr key={index}>
-              {row.map((p, index) => {
-                return <td key={index}>{p}</td>;
-              })}
-            </tr>
-          );
-        })}
+        <tbody>
+          {tabla.map((row, index) => {
+            return (
+              <tr key={index}>
+                {row.map((p, index) => {
+                  return <td key={index}>{p}</td>;
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </>
   );
