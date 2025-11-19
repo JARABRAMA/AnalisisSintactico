@@ -12,3 +12,8 @@ main {
     max-width: 1000px;
   }
 }
+
+a {
+  color: var(--txt-color);
+  text-decoration: none;
+}
