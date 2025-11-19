@@ -1,341 +1,69 @@
-const table = [
-  ["s4", "s5", null, null, null, null, null, null, null, 1, 2, null, 3, null],
-  [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    "acc",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ],
-  [
-    null,
-    null,
-    null,
-    "s7",
-    "s8",
-    null,
-    null,
-    "r4",
-    null,
-    null,
-    6,
-    null,
-    null,
-    null,
-  ],
-  [
-    null,
-    null,
-    "r8",
-    "r8",
-    "r8",
-    "s10",
-    "s11",
-    "r8",
-    null,
-    null,
-    null,
-    null,
-    9,
-    null,
-  ],
-  [
-    null,
-    null,
-    "r9",
-    "r9",
-    "r9",
-    "r9",
-    "r9",
-    "r9",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ],
-  [
-    "s4",
-    "s5",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    12,
-    null,
-    3,
-    null,
-    null,
-  ],
-  [
-    null,
-    null,
-    "r1",
-    "r1",
-    "r1",
-    null,
-    null,
-    "r1",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ],
-  [
-    "s4",
-    "s5",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    13,
-    null,
-    null,
-  ],
-  [
-    "s4",
-    "s5",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    14,
-    null,
-    null,
-  ],
-  [
-    null,
-    null,
-    "r5",
-    "r5",
-    "r5",
-    null,
-    null,
-    "r5",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ],
-  [
-    "s4",
-    "s5",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    15,
-  ],
-  [
-    "s4",
-    "s5",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    16,
-  ],
-  [
-    null,
-    null,
-    "s17",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ],
-  [
-    null,
-    null,
-    "r4",
-    "s7",
-    "s8",
-    null,
-    null,
-    "r4",
-    null,
-    null,
-    18,
-    null,
-    null,
-    null,
-  ],
-  [
-    null,
-    null,
-    "r4",
-    "s7",
-    "s8",
-    null,
-    null,
-    "r4",
-    null,
-    null,
-    19,
-    null,
-    null,
-    null,
-  ],
-  [
-    null,
-    null,
-    "r6",
-    "r6",
-    "r6",
-    "s10",
-    "s11",
-    "r6",
-    null,
-    null,
-    null,
-    null,
-    20,
-    null,
-  ],
-  [
-    null,
-    null,
-    "r7",
-    "r7",
-    "r7",
-    "s10",
-    "s11",
-    "r7",
-    null,
-    null,
-    null,
-    null,
-    21,
-    null,
-  ],
-  [
-    null,
-    null,
-    "r10",
-    "r10",
-    "r10",
-    "r10",
-    "r10",
-    "r10",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ],
-  [
-    null,
-    null,
-    "r2",
-    "r2",
-    "r2",
-    null,
-    null,
-    "r2",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ],
-  [
-    null,
-    null,
-    "r3",
-    "r3",
-    "r3",
-    null,
-    null,
-    "r3",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ],
-  [
-    null,
-    null,
-    "r6",
-    "r6",
-    "r6",
-    null,
-    null,
-    "r6",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ],
-  [
-    null,
-    null,
-    "r7",
-    "r7",
-    "r7",
-    null,
-    null,
-    "r7",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ],
-];
+import { table, gramar, mapper } from "./ascendent-constants.js";
+import { evaluate } from "mathjs";
+import { getElements } from "../extactor";
 
-table[5];
+export function ascendent(string) {
+  const stack = [0];
+
+  const elementsNumbers = getElements(string);
+
+  let elements = elementsNumbers.map((x) => {
+    if (typeof x === "number") return "num";
+    return x;
+  });
+  elements.push("$");
+
+  let index = 0;
+  console.log(elements);
+
+  while (true) {
+    const lastStack = stack.at(-1);
+    const firstInput = elements[0];
+
+    if (firstInput === '$') {
+      return { isValid: true, index: null, value: evaluate(string) };
+    }
+
+    const cell = table[lastStack][mapper[firstInput]];
+    console.log(table);
+
+    if (cell == null) {
+      return { index, isValid: false };
+    }
+
+    if (cell === "acc") {
+      return { isValid: true, value: evaluate(string) };
+    }
+
+    // SHIFT
+    if (cell.startsWith("s")) {
+      const state = Number(cell.slice(1));
+      stack.push(state);
+      elements = elements.slice(1);
+      index++;
+      continue;
+    }
+
+    // REDUCE
+    if (cell.startsWith("r")) {
+      const rule = Number(cell.slice(1));
+      const gram = gramar[rule];
+
+      // pop tantos estados como símbolos RHS
+      for (let i = 0; i < gram.simbols; i++) {
+        stack.pop();
+      }
+
+      const last = stack.at(-1);
+      const gotoCell = table[last][mapper[gram.head]];
+
+      if (gotoCell == null) {
+        return { index, isValid: false };
+      }
+
+      stack.push(Number(gotoCell));
+
+      index++;
+    }
+  }
+}
