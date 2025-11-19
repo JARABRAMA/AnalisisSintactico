@@ -17,6 +17,12 @@ export function Header() {
         </svg>
         Analisís sintactico de cadenas
       </h2>
+
+      <nav>
+        <a href="/ascendent">ascendente</a>
+        <a href="/descendent">descendente</a>
+      </nav>
+
       <nav>
         <a
           target="_blank"

@@ -1,0 +1,19 @@
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 25px;
+  width: 90%;
+  margin: auto;
+}
+
+@media (width > 1250px) {
+  main {
+    max-width: 1000px;
+  }
+}
+
+a {
+  color: var(--txt-color);
+  text-decoration: none;
+}
